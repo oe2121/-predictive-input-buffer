@@ -738,7 +738,7 @@ namespace {
         // checkpoint buttons); always shown in normal mode while the buffer is on
         auto* layer = GameManager::get()->m_playLayer;
         buf.watermark->setVisible(buf.enabled && !(layer && layer->m_isPracticeMode));
-        buf.watermark->setString(fmt::format("CBF  |  {}", stageText()).c_str());
+        buf.watermark->setString(fmt::format("el {}", stageText()).c_str());
     }
 
     void refreshAutoTag() {
@@ -5933,8 +5933,8 @@ class $modify(BufPlayLayer, PlayLayer) {
 #endif
         buf.watermark = CCLabelBMFont::create("", "bigFont.fnt");
         buf.watermark->setScale(WATERMARK_SCALE);
-        buf.watermark->setColor({ 150, 205, 255 });
-        buf.watermark->setOpacity(150);
+        buf.watermark->setColor({ 255, 255, 255 }); // white
+        buf.watermark->setOpacity(30);
         buf.watermark->setAnchorPoint({ 0.f, 0.f });
         buf.watermark->setPosition({ 4.f, 3.f });
         buf.watermark->setZOrder(1000);
