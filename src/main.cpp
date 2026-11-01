@@ -800,10 +800,10 @@ namespace {
 
     std::string stageText() {
         if (!buf.enabled) {
-            return "Buffer: OFF";
+            return "hi lol";
         }
         if (buf.perMode) {
-            return fmt::format("Buffer: per mode{}", buf.train ? " [training]" : "");
+            return fmt::format("hi{}", buf.train ? " [training]" : "");
         }
         return fmt::format("Buffer{}: {:g}f / wave {:g}f{}", STAGES[buf.stage].custom ? " (custom)" : "", buf.ticksAll * TICK,
             buf.ticksWave * TICK, buf.train ? " [training]" : "");
